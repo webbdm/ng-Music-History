@@ -1,10 +1,12 @@
-app.controller("AddressListCtrl", function($routeParams, $scope, AddressFactory) {
+app.controller("SongListCtrl", function($routeParams, $scope, SongFactory) {
+
+    //$scope.songs = [];
 
     //Get Address List
     let getItems = () => {
-        AddressFactory.getAddresses().then((itemz) => {
-            $scope.addresses = itemz;
-            //console.log($scope.addresses);
+        SongFactory.getSongs().then((itemz) => {
+            $scope.songs = itemz;
+            console.log("test",$scope.songs);
         }).catch((error) => {
             console.log("get Error", error);
         });
@@ -18,8 +20,8 @@ app.controller("AddressListCtrl", function($routeParams, $scope, AddressFactory)
 
     //Delete Address
 
-    $scope.deleteAddress = (addressID) => {
-        AddressFactory.deletez(addressID).then(() => {
+    $scope.deleteSong = (songID) => {
+        SongFactory.deletez(songID).then(() => {
             getItems();
         }).catch(() => {
             console.log("deleteItem error", error);

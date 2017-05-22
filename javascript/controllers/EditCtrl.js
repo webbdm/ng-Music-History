@@ -1,21 +1,20 @@
-app.controller("EditCtrl", function($location, $routeParams, $scope, AddressFactory) {
+app.controller("EditCtrl", function($location, $routeParams, $scope, SongFactory) {
 
-    $scope.newAddress = {};
+    $scope.newSong = {};
 
-    AddressFactory.getSingleAddress($routeParams.id).then((itemz) => {
+    SongFactory.getSingleSong($routeParams.id).then((itemz) => {
         
-        $scope.newAddress = itemz;
-        console.log("get single address", $scope.newAddress);
-        console.log("to edit", $scope.newAddress);
-        $scope.newAddress.id = $routeParams.id;
+        $scope.newSong = itemz;
+        console.log("to edit", $scope.newSong);
+        $scope.newSong.id = $routeParams.id;
     }).catch((error) => {
         console.log("edit Error", error);
     });
 
 
-    $scope.addNewAddress = () => {
-        console.log("TEST PUT",$scope.newAddress);
-        AddressFactory.editAddress($scope.newAddress).then(() => {
+    $scope.addNewSong = () => {
+        console.log("TEST PUT",$scope.newSong);
+        SongFactory.editSong($scope.newSong).then(() => {
             $location.url('/list');
         }).catch((error) => {
             console.log(error);
