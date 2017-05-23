@@ -76,6 +76,6 @@ app.factory("SongFactory", function($http, $q, FIREBASE_CONFIG) {
     };
 
 
-    return { getSongs: getSongs, postNewAddress: postNewAddress, deletez: deletez, editAddress: editAddress, getSingleSong: getSingleSong };
+    return { getSongs: getSongs, postNewSong: postNewSong, deletez: deletez, editSong: editSong, getSingleSong: getSingleSong };
 
 });

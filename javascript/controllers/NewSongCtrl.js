@@ -1,4 +1,4 @@
-app.controller("NewSongCtrl", function($routeParams, $scope, SongFactory) {
+app.controller("NewSongCtrl", function($location,$routeParams, $scope, SongFactory) {
     $scope.songs = [];
 
     $scope.addNewSong = () => {
@@ -8,6 +8,7 @@ app.controller("NewSongCtrl", function($routeParams, $scope, SongFactory) {
             $scope.newSong = {};
             //$scope.showListView = true;
             //getItems();
+            $location.url('/list');
         }).catch((error) => {
             console.log("addNewSong error", error);
         });

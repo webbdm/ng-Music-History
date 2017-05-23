@@ -4,21 +4,21 @@ app.run(function(FIREBASE_CONFIG) {
 
 app.config(function($routeProvider) {
     $routeProvider
-        .when('/', {
-            templateUrl: 'partials/Address-List.html',
-            controller: 'AddressListCtrl'
+        .when('/list', {
+            templateUrl: 'partials/Song-List.html',
+            controller: 'SongListCtrl'
         })
-        // .when('/', {
-        //     templateUrl: 'partials/New-Add.html',
-        //     controller: 'NewAddCtrl'
-        // })
-        // .when('//:id', {
-        //     templateUrl: 'partials/address-view.html',
-        //     controller: 'EditCtrl'
-        // })
-        // .when('//:id', {
-        //     templateUrl: 'partials/New-Add.html',
-        //     controller: 'EditCtrl'
-        // })
+        .when('/new', {
+            templateUrl: 'partials/New-song.html',
+            controller: 'NewSongCtrl'
+        })
+        .when('/song/:id', {
+            templateUrl: 'partials/Song-view.html',
+            controller: 'EditCtrl'
+        })
+        .when('/edit/:id', {
+            templateUrl: 'partials/New-song.html',
+            controller: 'EditCtrl'
+        })
         .otherwise('/list');
 });

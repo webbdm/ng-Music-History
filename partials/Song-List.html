@@ -1,0 +1,17 @@
+<div class="col-md-6">
+    <div class="listBox">
+        <input class="searchText form-control" ng-model="searchText" type="text" name="searchText" placeholder="Search">
+        <div class="songBox">
+            <div ng-repeat="song in songs | filter: searchText ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{song.song_name}}</div>
+                    <div class="panel-body">
+                        <p>By {{song.artist_name}} from the album {{song.album}}</p>
+                        <button><a ng-href="#!/song/{{song.id}}">Details</a></button>
+                        <button class="btn btn-danger fa fa-trash-o" ng-click="deleteSong(song.id)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
