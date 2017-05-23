@@ -13,23 +13,25 @@
 
     <h1>Music History</h1>
 
-    <div class="main" ng-view></div>
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default"><a href="#!/new">Add +</a></button>
+        <button type="button" class="btn btn-default">Login</button>
+        <button type="button" class="btn btn-default"><a href="#!/list">List</a></button>
+    </div>
 
+    <div class="main" ng-view></div>
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="./lib/bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="./lib/bower_components/angular-route/angular-route.min.js"></script>
-
     <script type="text/javascript" src="./javascript/app.js"></script>
     <script type="text/javascript" src="./javascript/appConfig.js"></script>
     <script type="text/javascript" src="./javascript/AppConstants.js"></script>
-
     <script type="text/javascript" src="./javascript/factories/SongFactory.js"></script>
     <script type="text/javascript" src="./javascript/controllers/SongListCtrl.js"></script>
     <script type="text/javascript" src="./javascript/controllers/NewSongCtrl.js"></script>
     <script type="text/javascript" src="./javascript/controllers/EditCtrl.js"></script>
-
 </body>
 
 </html>
